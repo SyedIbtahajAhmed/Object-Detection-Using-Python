@@ -12,7 +12,7 @@ colors = np.random.uniform(0, 255, size=(len(classes), 3))
 
 # Loading image
 cap = cv2.VideoCapture(0)
-
+count = 1
 while True:
     _, frame = cap.read()
 
@@ -49,7 +49,6 @@ while True:
 
 
     indexes = cv2.dnn.NMSBoxes(boxes, confidences, 0.5, 0.4)
-
     font = cv2.FONT_HERSHEY_PLAIN
     for i in range(len(boxes)):
         if i in indexes:
@@ -59,6 +58,17 @@ while True:
                 color = colors[i]
                 cv2.rectangle(frame, (x, y), (x + w, y + h), color, 2)
                 cv2.putText(frame, label, (x, y + 30), font, 3, color, 3)
+                key = cv2.waitKey(1)
+                if key == 115:
+                    car_det = cv2.imwrite("DetectedCars/Car%d.jpg" % count, frame)
+                    #DataBas
+                    car_detect = cv2.imread("DetectedCars/Car%d.jpg" % count)
+                    cv2.imshow("Detected Car", car_detect)
+                    count += 1
+                    cv2.waitKey(3000) ## Hold Three Seconds
+                    cv2.destroyWindow("Detected Car")
+                    break
+                    
     cv2.imshow("Image", frame)
     key = cv2.waitKey(1)
     if key == 27:
