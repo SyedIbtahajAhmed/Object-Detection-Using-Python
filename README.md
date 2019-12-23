@@ -9,4 +9,4 @@ This repository contains files
 3. yolo_object_detection.py:which contains the yolo algorithm.
 4. yolov3.cgf:which contains the configuration of the yolo algorithm.
 5. yolov3_weights file should be downlaoded separately.
-6. A folder Named # Detected Cars should be created in the main folder to save the images of the detected cars.
+6. A folder Named (Detected Cars) should be created in the main folder to save the images of the detected cars.
