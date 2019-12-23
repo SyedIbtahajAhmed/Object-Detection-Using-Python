@@ -8,3 +8,5 @@ This repository contains files
 2. main.py:which contains the code of the real-time object detection code using the yolo algorithm.
 3. yolo_object_detection.py:which contains the yolo algorithm.
 4. yolov3.cgf:which contains the configuration of the yolo algorithm.
+5. yolov3_weights file should be downlaoded separately.
+6. A folder Named ÞDetected CarsÞ should be created in the main folder to save the images of the detected cars.
